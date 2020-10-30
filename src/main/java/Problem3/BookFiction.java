@@ -19,6 +19,7 @@ public class BookFiction extends Book {
 
     @Override
     public int getLateFeeInDollar() {
+
         return lateFeePerDayInDollar;
     }
 

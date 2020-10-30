@@ -12,6 +12,12 @@ public abstract class Book implements StoreMediaOperations {
         this.author = author;
         this.id = UUID.randomUUID();
     }
+    public void setId(UUID id) {
+        this.id = id;
+    }
+    public UUID getId() {
+        return this.id;
+    }
 
     public Book(Book anotherBook) {
         this.id = anotherBook.id;
@@ -37,6 +43,7 @@ public abstract class Book implements StoreMediaOperations {
         // The bug is caught when
         //  1. newly add tests fail while all old tests still pass
         //  2. remove the bug and use the fix below, all tests pass
+
         return id.equals(theOtherBook.id) &&
                 author.equals(theOtherBook.author) &&
                 title.equals(theOtherBook.title);
